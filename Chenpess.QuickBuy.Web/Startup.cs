@@ -64,6 +64,7 @@ namespace Chenpess.QuickBuy.Web
                 if (env.IsDevelopment())
                 {
                     //spa.UseAngularCliServer(npmScript: "start");
+                    var i = 0;
                     spa.UseProxyToSpaDevelopmentServer("http://localhost:4200/");
                 }
             });

@@ -10,19 +10,19 @@ namespace Chenpess.QuickBuy.Dominio.BLL
 
         public bool ehBoleto
         {
-            get { return id == (int)TipoFormaPagamentoEnum.boleto }
+            get { return id == (int)TipoFormaPagamentoEnum.boleto; }
         }
         public bool ehCartao
         {
-            get { return id == (int)TipoFormaPagamentoEnum.cartao}
+            get { return id == (int)TipoFormaPagamentoEnum.cartao; }
         }
         public bool ehDeposito
         {
-            get { return id == (int)TipoFormaPagamentoEnum.deposito}
+            get { return id == (int)TipoFormaPagamentoEnum.deposito; }
         }
         public bool NaoDefinido
         {
-            get { return id == (int)TipoFormaPagamentoEnum.naoDef }
+            get { return id == (int)TipoFormaPagamentoEnum.naoDef; }
         }
     }
 }

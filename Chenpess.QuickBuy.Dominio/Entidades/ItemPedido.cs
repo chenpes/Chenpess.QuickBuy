@@ -12,7 +12,10 @@ namespace Chenpess.QuickBuy.Dominio.Entidades
 
         public override void Validade()
         {
-            throw new NotImplementedException();
+            if (produtoId == 0)
+                adicionarMensagem("Não foi identificado a referencia do produto");
+            if (quantidade == 0)
+                adicionarMensagem("Quantidade não pode ser 0");
         }
     }
 }

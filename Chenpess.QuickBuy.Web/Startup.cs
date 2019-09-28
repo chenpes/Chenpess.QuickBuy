@@ -24,7 +24,7 @@ namespace Chenpess.QuickBuy.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            var connectionString = Configuration.GetConnectionString("MySqlConnection");
+            var connectionString = Configuration.GetConnectionString("QuickBuyDB");
             services.AddDbContext<QuickBuyContexto>(option => 
                                                     option.UseMySql(connectionString,m => 
                                                                                      m.MigrationsAssembly("Chenpess.QuickBuy.Repositorio")));

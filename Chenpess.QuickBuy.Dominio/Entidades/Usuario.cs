@@ -16,7 +16,8 @@ namespace Chenpess.QuickBuy.Dominio.Entidades
 
         public override void Validade()
         {
-            throw new System.NotImplementedException();
+            if (string.IsNullOrEmpty(nome))
+                adicionarMensagem("Critica: Nome do usuário não pode ser vazio");
         }
     }
 }

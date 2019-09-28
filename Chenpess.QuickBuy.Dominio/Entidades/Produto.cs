@@ -10,7 +10,13 @@
 
         public override void Validade()
         {
-            throw new System.NotImplementedException();
+            limparMensagemValidacao();
+            if (string.IsNullOrEmpty(nome))
+                adicionarMensagem("Critica: Nome do Produto não pode ser vazio");
+
+            if (string.IsNullOrEmpty(descricao))
+                adicionarMensagem("Critica: Descriçao não pode ser vazio!");
+
         }
     }
 }

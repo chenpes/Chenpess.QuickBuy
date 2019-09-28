@@ -13,8 +13,4 @@
     <ProjectReference Include="..\Chenpess.QuickBuy.Dominio\Chenpess.QuickBuy.Dominio.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Config\" />
-  </ItemGroup>
-
 </Project>

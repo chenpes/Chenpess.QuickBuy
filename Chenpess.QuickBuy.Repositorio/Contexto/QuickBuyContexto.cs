@@ -1,5 +1,6 @@
 ﻿using Chenpess.QuickBuy.Dominio.BLL;
 using Chenpess.QuickBuy.Dominio.Entidades;
+using Chenpess.QuickBuy.Repositorio.Config;
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,6 +18,16 @@ namespace Chenpess.QuickBuy.Repositorio.Contexto
         public QuickBuyContexto(DbContextOptions options) : base(options)
         {
 
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new UsuarioConfiguration());
+            modelBuilder.ApplyConfiguration(new ProdutoConfiguration());
+            modelBuilder.ApplyConfiguration(new PedidoConfiguration());
+            modelBuilder.ApplyConfiguration(new ItemPedidoConfiguration());
+            modelBuilder.ApplyConfiguration(new FormaPagamentoConfiguration());
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

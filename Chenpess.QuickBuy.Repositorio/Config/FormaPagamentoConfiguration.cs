@@ -8,7 +8,19 @@ namespace Chenpess.QuickBuy.Repositorio.Config
     {
         public void Configure(EntityTypeBuilder<FormaPagamento> builder)
         {
-            throw new System.NotImplementedException();
+            builder.HasKey(f => f.id);
+
+            builder
+                .Property(f => f.nome)
+                .IsRequired()
+                .HasMaxLength(50)
+                .HasColumnType("varchar");
+
+            builder
+                .Property(f => f.descricao)
+                .IsRequired()
+                .HasMaxLength(50)
+                .HasColumnType("varchar");
         }
     }
 }

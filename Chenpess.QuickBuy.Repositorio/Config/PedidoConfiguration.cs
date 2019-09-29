@@ -8,7 +8,42 @@ namespace Chenpess.QuickBuy.Repositorio.Config
     {
         public void Configure(EntityTypeBuilder<Pedido> builder)
         {
-            throw new System.NotImplementedException();
+            builder.HasKey(p => p.id);
+
+            builder
+                .Property(p => p.dataPedido)
+                .IsRequired();
+
+            builder
+                .Property(p => p.dataPrevisaoEntrega)
+                .IsRequired();
+
+            builder
+                .Property(p => p.CEP)
+                .IsRequired()
+                .HasMaxLength(10);
+
+            builder
+                .Property(p => p.cidade)
+                .IsRequired()
+                .HasMaxLength(50)
+                .HasColumnType("varchar");
+
+            builder
+                .Property(p => p.uf)
+                .IsRequired()
+                .HasMaxLength(2)
+                .HasColumnType("varchar");
+
+            builder
+                .Property(p => p.enderecoCompleto)
+                .IsRequired()
+                .HasMaxLength(100);
+
+            builder
+                .Property(p => p.numeroEndereco)
+                .IsRequired();
+
         }
     }
 }

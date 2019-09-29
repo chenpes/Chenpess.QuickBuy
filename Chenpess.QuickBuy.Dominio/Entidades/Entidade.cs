@@ -7,7 +7,7 @@ namespace Chenpess.QuickBuy.Dominio.Entidades
 {
     public abstract class Entidade
     {
-        public List<string> _mensagemValidacao { get; set; }
+        private List<string> _mensagemValidacao { get; set; }
         private List<string> mensagemValidacao
         {
             get { return _mensagemValidacao ?? (_mensagemValidacao = new List<string>()); }

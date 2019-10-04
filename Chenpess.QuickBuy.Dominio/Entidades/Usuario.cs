@@ -12,7 +12,7 @@ namespace Chenpess.QuickBuy.Dominio.Entidades
         /// <summary>
         /// Usuario pode ter nenhum ou muitos pedidos
         /// </summary>
-        public ICollection<Pedido> pedidos { get; set; }
+        public virtual ICollection<Pedido> pedidos { get; set; }
 
         public override void Validade()
         {

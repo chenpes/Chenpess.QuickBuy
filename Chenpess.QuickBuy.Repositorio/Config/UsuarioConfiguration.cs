@@ -28,7 +28,8 @@ namespace Chenpess.QuickBuy.Repositorio.Config
                 .IsRequired()
                 .HasMaxLength(50)
                 .HasColumnType("varchar");
-
+            builder.HasMany(u => u.pedidos)
+                .WithOne(p => p.Usuario);
 
         }
     }

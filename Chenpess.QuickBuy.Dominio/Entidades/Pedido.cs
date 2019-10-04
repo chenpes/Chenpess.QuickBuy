@@ -9,8 +9,8 @@ namespace Chenpess.QuickBuy.Dominio.Entidades
     {
         public int id { get; set; }
         public DateTime dataPedido { get; set; }
-        public int usuarioId { get; set; }
-
+        public int UsuarioId { get; set; }
+        public virtual  Usuario Usuario { get; set; }
         public DateTime dataPrevisaoEntrega { get; set; }
 
         public string CEP { get; set; }

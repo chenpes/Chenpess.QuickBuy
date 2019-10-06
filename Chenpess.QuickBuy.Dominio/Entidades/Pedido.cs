@@ -20,12 +20,12 @@ namespace Chenpess.QuickBuy.Dominio.Entidades
         public string numeroEndereco{ get; set; }
 
         public int FormaPagamentoId { get; set; }
-        public FormaPagamento formaPagamento { get; set; }
+        public virtual FormaPagamento formaPagamento { get; set; }
 
         /// <summary>
         /// pedido deve ter pelo menos 1 item de pedido
         /// </summary>
-        public ICollection<ItemPedido> itensPedido { get; set; }
+        public virtual ICollection<ItemPedido> itensPedido { get; set; }
 
         public override void Validade()
         {

@@ -16,18 +16,15 @@ namespace Chenpess.QuickBuy.Repositorio.Config
             builder
                 .Property(u => u.senha)
                 .IsRequired()
-                .HasMaxLength(400)
-                .HasColumnType("varchar");
+                .HasMaxLength(400);
             builder
                 .Property(u => u.nome)
                 .IsRequired()
-                .HasMaxLength(50)
-                .HasColumnType("varchar");
+                .HasMaxLength(50);
             builder
                 .Property(u => u.sobreNome)
                 .IsRequired()
-                .HasMaxLength(50)
-                .HasColumnType("varchar");
+                .HasMaxLength(50);
             builder.HasMany(u => u.pedidos)
                 .WithOne(p => p.Usuario);
 

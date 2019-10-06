@@ -13,14 +13,12 @@ namespace Chenpess.QuickBuy.Repositorio.Config
             builder
                 .Property(f => f.nome)
                 .IsRequired()
-                .HasMaxLength(50)
-                .HasColumnType("varchar");
+                .HasMaxLength(50);
 
             builder
                 .Property(f => f.descricao)
                 .IsRequired()
-                .HasMaxLength(50)
-                .HasColumnType("varchar");
+                .HasMaxLength(50);
         }
     }
 }

@@ -26,14 +26,12 @@ namespace Chenpess.QuickBuy.Repositorio.Config
             builder
                 .Property(p => p.cidade)
                 .IsRequired()
-                .HasMaxLength(50)
-                .HasColumnType("varchar");
+                .HasMaxLength(50);
 
             builder
                 .Property(p => p.uf)
                 .IsRequired()
-                .HasMaxLength(2)
-                .HasColumnType("varchar");
+                .HasMaxLength(2);
 
             builder
                 .Property(p => p.enderecoCompleto)

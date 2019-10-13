@@ -23,6 +23,7 @@ namespace Chenpess.QuickBuy.Dominio.BLL
         public bool NaoDefinido
         {
             get { return id == (int)TipoFormaPagamentoEnum.naoDef; }
+
         }
     }
 }

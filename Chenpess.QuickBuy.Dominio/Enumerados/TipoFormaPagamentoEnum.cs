@@ -3,8 +3,8 @@
     public enum TipoFormaPagamentoEnum
     {
         naoDef = 0,
-        boleto = 1,
-        cartao = 2,
-        deposito = 3
+        Boleto = 1,
+        Cartao = 2,
+        Deposito = 3
     }
 }

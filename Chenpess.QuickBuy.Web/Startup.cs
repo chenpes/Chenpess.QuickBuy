@@ -1,3 +1,4 @@
+using Chenpess.QuickBuy.Dominio.Contratos;
 using Chenpess.QuickBuy.Repositorio.Contexto;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -7,6 +8,7 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Chenpess.QuickBuy.Repositorio.Repositorios;
 
 namespace Chenpess.QuickBuy.Web
 {
@@ -29,6 +31,9 @@ namespace Chenpess.QuickBuy.Web
                                                     option.UseLazyLoadingProxies()
                                                           .UseMySql(connectionString,m => 
                                                                                      m.MigrationsAssembly("Chenpess.QuickBuy.Repositorio")));
+            services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();
+            services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
+            services.AddScoped<IPedidoRepositorio, PedidoRepositorio>();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {

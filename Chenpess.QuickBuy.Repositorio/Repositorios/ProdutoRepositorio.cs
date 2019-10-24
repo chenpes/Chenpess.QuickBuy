@@ -1,12 +1,13 @@
 ﻿using Chenpess.QuickBuy.Dominio.Contratos;
 using Chenpess.QuickBuy.Dominio.Entidades;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Chenpess.QuickBuy.Repositorio.Contexto;
 
 namespace Chenpess.QuickBuy.Repositorio.Repositorios
 {
-    class ProdutoRepositorio : BaseRepositorio<Produto>, IProdutoRepositorio
+    public class ProdutoRepositorio : BaseRepositorio<Produto>, IProdutoRepositorio
     {
+        public ProdutoRepositorio(QuickBuyContexto quickBuyContexto) : base(quickBuyContexto)
+        {
+        }
     }
 }

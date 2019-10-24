@@ -9,11 +9,11 @@ namespace Chenpess.QuickBuy.Repositorio.Repositorios
     {
         public Cliente()
         {
-            using (var usuarioRepositorio = new UsuarioRepositorio())
-            {
-                var usuario = new Usuario();
-                usuarioRepositorio.adicionar(usuario);
-            }
+            //using (var usuarioRepositorio = new UsuarioRepositorio())
+            //{
+            //    var usuario = new Usuario();
+            //    usuarioRepositorio.adicionar(usuario);
+            //}
         }
 
 

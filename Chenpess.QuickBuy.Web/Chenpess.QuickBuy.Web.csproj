@@ -12,6 +12,10 @@
     <BuildServerSideRenderer>false</BuildServerSideRenderer>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
@@ -25,13 +29,27 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\produto\produto.component.ts" />
+    <None Remove="ClientApp\src\app\usuario\login\login.component.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Chenpess.QuickBuy.Repositorio\Chenpess.QuickBuy.Repositorio.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\produto\produto.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\usuario\login\login.component.ts" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Update="config.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\app\usuario\cadastro\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

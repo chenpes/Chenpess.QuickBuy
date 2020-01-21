@@ -8,6 +8,6 @@ export class ProdutoComponent {
     public liberadoParaVenda: boolean;
 
     public obterNome(): string {
-        return "Claudio";
+        return "Claudio henrique silva";
     }
 }

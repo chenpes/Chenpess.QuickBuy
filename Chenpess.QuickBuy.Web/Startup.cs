@@ -76,12 +76,9 @@ namespace Chenpess.QuickBuy.Web
                 if (env.IsDevelopment())
                 {
 
-                    Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliBuilder a;
+                    //Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliBuilder a;
                     spa.Options.StartupTimeout = new System.TimeSpan(0, 0, 80);
                     spa.UseProxyToSpaDevelopmentServer("http://localhost:4200/");
-                    //spa.UseAngularCliServer(npmScript: "start");
-                    //spa.UseProxyToSpaDevelopmentServer("http://localhost:44390/");
-                    
                 }
             });
         }

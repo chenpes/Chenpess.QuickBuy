@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { Usuario } from "../../modelo/usuario";
+import { Router } from "@angular/router";
 
 @Component({
     selector: "app-login",
@@ -12,7 +13,7 @@ export class LoginComponent {
     public titulo = "Quick Buy - Faça suas compras!";
     public usuarioautenticado: boolean;
 
-    constructor() {
+    constructor(private router: Router) {
         this.usuario = new Usuario();
     }
 
@@ -22,7 +23,9 @@ export class LoginComponent {
         }
         else {
             this.usuarioautenticado = true;
+            localStorage.setItem("usuario-autenticado","1")
             alert('Seja bem vindo ' + this.usuario.email + " - " + this.usuario.senha);
+            //this.router.navigate(['/']);
         }
 
           

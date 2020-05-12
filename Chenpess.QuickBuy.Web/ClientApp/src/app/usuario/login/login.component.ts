@@ -25,7 +25,7 @@ export class LoginComponent {
             this.usuarioautenticado = true;
             localStorage.setItem("usuario-autenticado","1")
             alert('Seja bem vindo ' + this.usuario.email + " - " + this.usuario.senha);
-            //this.router.navigate(['/']);
+            this.router.navigate(['/']);
         }
 
           

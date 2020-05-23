@@ -1,31 +1,39 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Usuario } from "../../modelo/usuario";
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 
 @Component({
     selector: "app-login",
     templateUrl: "./login.component.html",
     styleUrls: ["./login.component.css"]
 })
-export class LoginComponent {
-    public usuario; 
+export class LoginComponent implements OnInit {
+    
+    public usuario;
+    public returnUrl: string;
     
     public titulo = "Quick Buy - Faça suas compras!";
     public usuarioautenticado: boolean;
 
-    constructor(private router: Router) {
+    constructor(private router: Router, private actvatedRouter: ActivatedRoute) {
+     
+    }
+
+    ngOnInit(): void {
+        this.returnUrl = this.actvatedRouter.snapshot.queryParams['returnUrl'];
         this.usuario = new Usuario();
     }
 
     entrar() {
-        if (this.usuario.email != "chenpess@gmail.com" || this.usuario.senha != "12345") {
-            alert('Usuario não cadastrado');
+        if (this.usuario.email == "chenpess@gmail.com" && this.usuario.senha == "12345") {
+            this.usuarioautenticado = true;
+            sessionStorage.setItem("usuario-autenticado", "1")
+            alert('Seja bem vindo ' + this.usuario.email + " - " + this.usuario.senha);
+            this.router.navigate([this.actvatedRouter]);
         }
         else {
-            this.usuarioautenticado = true;
-            localStorage.setItem("usuario-autenticado","1")
-            alert('Seja bem vindo ' + this.usuario.email + " - " + this.usuario.senha);
-            this.router.navigate(['/']);
+            alert('Usuario não cadastrado');
+            
         }
 
           

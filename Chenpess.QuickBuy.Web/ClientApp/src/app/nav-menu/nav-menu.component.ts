@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Route } from '@angular/compiler/src/core';
 import { Router } from '@angular/router';
+import { createElementCssSelector } from '@angular/compiler';
 
 @Component({
   selector: 'app-nav-menu',
@@ -23,11 +24,7 @@ export class NavMenuComponent {
     }
 
     public usuarioLogado(): boolean {
-        //var usuarioLogado = sessionStorage.getItem("usuario-autenticado");
-        //if (usuarioLogado == "1") {
-        //    return true;
-        //}
-        //return false;
+
         return sessionStorage.getItem("usuario-autenticado") == "1";
     }
 

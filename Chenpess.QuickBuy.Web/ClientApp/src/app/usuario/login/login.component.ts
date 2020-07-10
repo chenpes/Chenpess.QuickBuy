@@ -8,15 +8,15 @@ import { Router, ActivatedRoute } from "@angular/router";
     styleUrls: ["./login.component.css"]
 })
 export class LoginComponent implements OnInit {
-    
+
     public usuario;
     public returnUrl: string;
-    
+
     public titulo = "Quick Buy - Faça suas compras!";
     public usuarioautenticado: boolean;
 
     constructor(private router: Router, private actvatedRouter: ActivatedRoute) {
-     
+
     }
 
     ngOnInit(): void {
@@ -28,15 +28,12 @@ export class LoginComponent implements OnInit {
         if (this.usuario.email == "chenpess@gmail.com" && this.usuario.senha == "12345") {
             this.usuarioautenticado = true;
             sessionStorage.setItem("usuario-autenticado", "1")
-            alert('Seja bem vindo ' + this.usuario.email + " - " + this.usuario.senha);
-            this.router.navigate([this.actvatedRouter]);
+            this.router.navigate([this.returnUrl]);
         }
         else {
             alert('Usuario não cadastrado');
-            
-        }
 
-          
+        }
     }
 
 }

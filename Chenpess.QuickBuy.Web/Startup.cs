@@ -1,14 +1,12 @@
 using Chenpess.QuickBuy.Dominio.Contratos;
 using Chenpess.QuickBuy.Repositorio.Contexto;
+using Chenpess.QuickBuy.Repositorio.Repositorios;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Chenpess.QuickBuy.Repositorio.Repositorios;
 
 namespace Chenpess.QuickBuy.Web
 {
@@ -81,7 +79,7 @@ namespace Chenpess.QuickBuy.Web
                 {
 
                     //Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliBuilder a;
-                    spa.Options.StartupTimeout = new System.TimeSpan(0, 0, 80);
+                    //spa.Options.StartupTimeout = new System.TimeSpan(0, 0, 80);
                     spa.UseProxyToSpaDevelopmentServer("http://localhost:4200/");
                 }
             });

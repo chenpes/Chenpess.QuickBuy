@@ -19,7 +19,7 @@ export class UsuarioServico {
             email: usuario.email,
             senha: usuario.senha
         }
-        return this.http.post<Usuario>(this.baseURL+"api/usuario", body, { headers });
+        return this.http.post<Usuario>(this.baseURL+"api/usuario/verificarUsuario", body, { headers });
     }
 }
 

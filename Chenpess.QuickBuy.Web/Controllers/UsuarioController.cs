@@ -2,41 +2,53 @@
 using Chenpess.QuickBuy.Dominio.Entidades;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Chenpess.QuickBuy.Web.Controllers
 {
     [Route("api/[controller]")]
     public class UsuarioController : Controller
     {
-        private readonly IUsuarioRepositorio _UsuarioRepositorio;
-        public UsuarioController(IUsuarioRepositorio UsuarioRepositorio)
-        {
-            _UsuarioRepositorio = UsuarioRepositorio;
-        }
+        //private readonly IUsuarioRepositorio _UsuarioRepositorio;
+        //public UsuarioController(IUsuarioRepositorio UsuarioRepositorio)
+        //{
+        //    _UsuarioRepositorio = UsuarioRepositorio;
+        //}
 
         [HttpPost]
-        public IActionResult Post([FromBody]Usuario Usuario)
+        public ActionResult Post()
         {
             try
             {
-                _UsuarioRepositorio.adicionar(Usuario);
-                return Created("api/Usuario", Usuario);
-
+                return Ok();
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.ToString());
             }
         }
-        [HttpGet]
-        public IActionResult Get()
+
+        [HttpPost("VerificarUsuario")]
+        public ActionResult VerificarUsuario([FromForm] Usuario usuario)
         {
             try
             {
-                return Ok(_UsuarioRepositorio.obterTodos());
+                if(usuario.email == "chenpess@gmail.com" && usuario.senha == "12345")
+                    return Ok(usuario);
+                return BadRequest("Usuário ou senha não cadastrado!"); 
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
+        }
+
+        [HttpGet]
+        public ActionResult Get()
+        {
+            try
+            {
+
+                return Ok();
             }
             catch (Exception ex)
             {
